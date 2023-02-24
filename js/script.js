@@ -13,37 +13,57 @@ ALTRIMENTI
 */
 
 
-let userAgeButton = document.getElementById('userAgeButton');
-
-let userAge = document.getElementById('userAge');
-
-let tripKm = document.getElementById('tripKm');
-
-let pricePerKM = 0.21;
-
-let baseTicketPrice = tripKm * pricePerKM;
-
-let finalPrice;
-
-userAgeButton.addEventListener('click', function() {
+// chiedere e memorizzare km e età
+let tripKmEl = document.getElementById("tripKm");
+let userAgeEl = document.getElementById("userAge");
 
 
-    if(userAge.value < 18){
+// prezzo per km 
+let pricePerKm = 0.21;
+
+
+let userButtonEl = document.getElementById("userButton");
+
+userButtonEl.addEventListener('click', function() {
+
+  let baseTicketPrice = tripKmEl.value * pricePerKm;
+
+  let finalPrice;
+
+  let discount;
+
+
+  if (userAgeEl.value < 18) {
+
+    finalPrice = baseTicketPrice - (baseTicketPrice / 100 * 20);
+    console.log("prezzo scontato minorenni: " + finalPrice);
+    discount = '20%';
+
+  } else if (userAgeEl.value >= 65) {
+
+    finalPrice = baseTicketPrice - (baseTicketPrice / 100 * 40);
+    console.log("prezzo scontato over 65: " + finalPrice);
+    discount = '40%';
+
+  } else {
     
-      finalPrice = baseTicketPrice - baseTicketPrice / 100 * 20;
+    finalPrice = baseTicketPrice;
+    console.log(finalPrice);
     
-    } else if(userAge.value >= 65) {
-    
-      finalPrice = baseTicketPrice - baseTicketPrice * 0.4;
-    
-    } else {
-    
-      finalPrice = baseTicketPrice;
-    }
+  }
 
-    document.getElementById('finalTicketCost').innerHTML = finalPrice.toFixed(2);
+  
+  finalPrice = finalPrice.toFixed(2);
+
+  document.getElementById("ticket").style.display = "block";
+
+
+  document.getElementById("ticketKm").innerHTML = "Km del viaggio: " + tripKmEl.value;
+  document.getElementById("ticketUserAge").innerHTML = "Età dell'utente: " + userAgeEl.value;
+  document.getElementById("ticketDiscount").innerHTML = "Sconto: " + discount;
+
+  document.getElementById("ticketPrice").innerhtml = "Prezzo del tuo biglietto: " + finalPrice;
+  console.log('ticketPrice');
+
 });
-
-
-
 

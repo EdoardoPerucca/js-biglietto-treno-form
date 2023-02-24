@@ -5,27 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js biglietto Form</title>
+
+   
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+    <div id="container">
+
+        <h1>Train Ticket</h1>
     
-    <div>
-        <label for="userAge">Quanti anni hai?</label>
-        <input id="userAge" type="number">
+        <div>
+            <input id="userName" type="text" placeholder="Nome e Cognome">
+            <input id="tripKm" type="number" placeholder="Quanti km vuoi percorrere?">
+            <input id="userAge" type="number" placeholder="Quanti anni hai?">
+            <br>
+            <button id="userButton">Genera</button>
+            <button id="userCancel">Cancella</button>
+        </div>
+
+        <div id="ticket">
+
+            <button id="closeTicket">Chiudi</button>
+
+            <div id="ticketKm"></div>
+            <div id="ticketUserAge"></div>
+            <div id="ticketDiscount"></div>
+            
+            <div id="ticketPrice"></div>
+
+
+        </div>
+
     </div>
-    
-    <div>
-        <label for="tripKM">Quanti km vuoi percorrere?</label>
-        <input id="tripKM" type="number">
-    </div>
-
-    <button id="userAgeButton">Genera</button>
-
-    <div>
-        <label for="finalTicketCost">Prezzo finale?</label>
-        <input id="finalTicketCost" type="number">
-    </div>  
+     
     
 
+    
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
