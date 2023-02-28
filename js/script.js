@@ -16,6 +16,7 @@ ALTRIMENTI
 // chiedere e memorizzare km e età
 let tripKmEl = document.getElementById("tripKm");
 let userAgeEl = document.getElementById("userAge");
+let userNameEl = document.getElementById('userName');
 
 
 // prezzo per km 
@@ -37,18 +38,23 @@ userButtonEl.addEventListener('click', function() {
 
     finalPrice = baseTicketPrice - (baseTicketPrice / 100 * 20);
     console.log("prezzo scontato minorenni: " + finalPrice);
+
     discount = '20%';
+    
 
   } else if (userAgeEl.value >= 65) {
 
     finalPrice = baseTicketPrice - (baseTicketPrice / 100 * 40);
     console.log("prezzo scontato over 65: " + finalPrice);
+
     discount = '40%';
 
   } else {
     
     finalPrice = baseTicketPrice;
     console.log(finalPrice);
+
+    discount = 'Nessuno';
     
   }
 
@@ -57,12 +63,13 @@ userButtonEl.addEventListener('click', function() {
 
   document.getElementById("ticket").style.display = "block";
 
+  document.getElementById('ticketName').innerHTML = userNameEl.value;
 
   document.getElementById("ticketKm").innerHTML = "Km del viaggio: " + tripKmEl.value;
   document.getElementById("ticketUserAge").innerHTML = "Età dell'utente: " + userAgeEl.value;
   document.getElementById("ticketDiscount").innerHTML = "Sconto: " + discount;
 
-  document.getElementById("ticketPrice").innerhtml = "Prezzo del tuo biglietto: " + finalPrice;
+  document.getElementById("ticketPrice").innerHTML = "Prezzo del tuo biglietto: " + finalPrice;
   console.log('ticketPrice');
 
 });

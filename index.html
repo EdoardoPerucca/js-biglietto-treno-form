@@ -14,34 +14,38 @@
 
     <div id="container">
 
-        <h1>Train Ticket</h1>
-    
-        <div>
-            <input id="userName" type="text" placeholder="Nome e Cognome">
-            <input id="tripKm" type="number" placeholder="Quanti km vuoi percorrere?">
-            <input id="userAge" type="number" placeholder="Quanti anni hai?">
-            <br>
-            <button id="userButton">Genera</button>
-            <button id="userCancel">Cancella</button>
-        </div>
+        <div id="container-ticket">
 
-        <div id="ticket">
+            <h1>Train Ticket</h1>
+        
+            <div id="ticket-top">
+                <input id="userName" type="text" placeholder="Nome e Cognome">
+                <input id="tripKm" type="number" placeholder="Quanti km vuoi percorrere?">
+                <input id="userAge" type="number" placeholder="Quanti anni hai?">
+                <br>
+                <button id="userButton">Genera il tuo biglietto</button>
+            </div>
 
-            <button id="closeTicket">Chiudi</button>
+            <hr>
 
-            <div id="ticketKm"></div>
-            <div id="ticketUserAge"></div>
-            <div id="ticketDiscount"></div>
-            
-            <div id="ticketPrice"></div>
+            <div id="ticket">
 
+                <div id="ticketName"></div>
+
+                <div id="ticketKm"></div>
+                <div id="ticketUserAge"></div>
+                <div id="ticketDiscount"></div>
+                
+                <div id="ticketPrice"></div>
+
+
+            </div>
 
         </div>
 
     </div>
      
-    
-
+ 
     
     <script type="text/javascript" src="js/script.js"></script>
 </body>
